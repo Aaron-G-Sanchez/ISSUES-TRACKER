@@ -1,8 +1,9 @@
 {
-  "name": "issuetracker",
+  "name": "issue-tracker",
   "displayName": "IssueTracker",
-  "description": "",
+  "description": "A VSCode extension to help track GitHub issues inline.",
   "version": "0.0.1",
+  "publisher": "aaron-g-sanchez",
   "engines": {
     "vscode": "^1.96.0"
   },
