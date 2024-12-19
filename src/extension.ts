@@ -15,6 +15,15 @@ export function activate(context: vscode.ExtensionContext) {
   let disposable = vscode.commands.registerCommand(
     'issuetracker.helloWorld',
     () => {
+      // TODO: Get the [helloworld] command to print the repo remote origin.
+      const folders = vscode.workspace.workspaceFolders
+      if (folders) {
+        const folderUri = folders[0].uri
+        vscode.workspace.fs.readDirectory(folderUri).then((children) => {
+          console.log(children)
+        })
+      }
+
       // The code you place here will be executed every time your command is executed
       // Display a message box to the user
       vscode.window.showInformationMessage('Hello World from IssueTracker!')
@@ -26,5 +35,3 @@ export function activate(context: vscode.ExtensionContext) {
 
 // This method is called when your extension is deactivated
 export function deactivate() {}
-
-// TODO: Get the [helloworld] command to print the repo remote origin.
